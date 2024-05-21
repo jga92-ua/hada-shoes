@@ -1,0 +1,10 @@
+Entering getMostSold2
+Data fetched in getMostSold2. Rows count: 3
+ID: 10003, Name: Nike Air Force 1, Price: 9,00
+ID: 10002, Name: Adidas Ultraboost, Price: 15,00
+ID: 10001, Name: Nike Air Max, Price: 12,00
+Entering getMostSold2
+Data fetched in getMostSold2. Rows count: 3
+ID: 10003, Name: Nike Air Force 1, Price: 9,00
+ID: 10002, Name: Adidas Ultraboost, Price: 15,00
+ID: 10001, Name: Nike Air Max, Price: 12,00

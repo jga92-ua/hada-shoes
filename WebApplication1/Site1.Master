@@ -1,0 +1,91 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.Master.cs" Inherits="WebApplication1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Hada Shoes - Zapatos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        /* Cambia el color de bg-primary a gris */
+        .bg-primary {
+            background-color: #808080 !important; /* Gris */
+        }
+
+        /* Si necesitas cambiar el color del texto, puedes agregarlo aquí */
+        .text-white {
+            color: #ffffff !important; /* Blanco */
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="bg-white">
+    <form id="form1" runat="server">
+            
+            <div class="left-sidebar bg-primary text-white">
+            <div id="header" class="header" style="background:url('src/header_wood.png')">
+                <div class="container-fluid">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-12" style="text-align: left;">
+                            <img  ID="hamburger" src="src/hamburguer.png" height="32" onClick="hideBar()" style="cursor:pointer" />
+                            <ul class="menu bg-primary font-italic" id="submenu" style="display:none; position:absolute; list-style-type:none; line-height:40px; z-index:1000; ">
+                                <li>Inicio</li>
+                                <li>Mejor Valorados</li>
+                                <li>Más Valorados</li>
+                                <li>Deporte</li>
+                                <li>Arreglado</li>
+                                <li>Casual</li>
+                                <li>Niños</li>
+                                <li>Más categorías</li>
+                            </ul>
+                        </div>
+                        <div class="col-12 pb-2" style="text-align: center;">
+                            <asp:ImageButton ID="shoe_logo" ImageUrl="src/logo2.png" OnClick="logo_Click" Height="60" runat="server"/>
+                        </div>
+                        <div class="col-12 my-3 my-md-0" align="center">
+                            <asp:Label runat="server" ForeColor="white">Buscador: </asp:Label>
+                            <asp:TextBox ID="searcher" runat="server" CssClass="searcher"/>
+                        </div>
+                        <div class="col-12 pb-3 pb-md-0 font-weight-bold" align="center">
+                            <asp:Label ID="init_sesion" runat="server" Text ="Iniciar Sesión"/>
+                        </div>
+                        <div class="col-12" style="text-align: center;">
+                            <asp:ImageButton ID="basket_icon" ImageUrl="src/cesta.png" OnClick="btnCesta_Click" Height="36" runat="server" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          </header>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        
+        <footer class="font-italic py-3" style="background-color:#c57e4f; bottom:0; width:100%; text-align:center; color: #fff !important;">
+             <div class="align-middle">
+                 <p style="margin: 0">Copyright &copy;2024. Designed by HadaShoes</p>
+             </div>
+        </footer>
+
+        <script> </script> <!-- Avoids Chrome's transition bug -->
+    </form>
+
+    <script type="text/javascript">
+
+        const hideBar = () => {
+            document.getElementById("submenu").style.display = "block";
+        }
+
+        window.addEventListener('click', function (e) {
+            if (!e.target.closest('#submenu') && !e.target.closest('#hamburger')) {
+                document.getElementById("submenu").style.display = "none";
+            }
+        });
+
+    </script>
+
+</body>
+</html>
